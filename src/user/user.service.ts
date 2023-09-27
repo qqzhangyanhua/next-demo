@@ -26,7 +26,6 @@ export class UserService {
       .collection('exam_user')
       .where({ name: 'zhangsan' })
       .count();
-    console.log('res', res);
     const result = await this.DbService.db.collection('exam_user').get();
     return {
       code: 200,

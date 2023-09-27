@@ -6,9 +6,13 @@ import { DbService } from './db/db.service';
 export class AppService {
   constructor(private readonly DbService: DbService) {}
 
-  getHello(): string {
-    const res = this.DbService.db.collection('test').add({ name: 'zhangsan' });
+  getHello(): any {
+    // const res = this.DbService.db.collection('test').add({ name: 'zhangsan' });
 
-    return res;
+    return {
+      code: 200,
+      message: 'success',
+      data: 'hello world',
+    };
   }
 }

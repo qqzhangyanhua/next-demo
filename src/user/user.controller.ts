@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Session,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -21,7 +22,8 @@ export class UserController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Session() session) {
+    console.log('session=======', session);
     return this.userService.findAll();
   }
 
