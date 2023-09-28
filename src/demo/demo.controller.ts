@@ -15,12 +15,13 @@ import { DemoService } from './demo.service';
 import { CreateDemoDto } from './dto/create-demo.dto';
 import { UpdateDemoDto } from './dto/update-demo.dto';
 import * as SvgCaptcha from 'svg-captcha';
+import { DemoPipe } from './demo.pipe';
 @Controller('demo')
 export class DemoController {
   constructor(private readonly demoService: DemoService) {}
 
   @Post()
-  create(@Body() createDemoDto: CreateDemoDto) {
+  create(@Body(DemoPipe) createDemoDto: CreateDemoDto) {
     console.log('demo=======', createDemoDto);
 
     return this.demoService.create(createDemoDto);

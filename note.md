@@ -4,6 +4,9 @@ nest g resource user 生成的文件 --默认用这个
 nest g pi user  生成管道
 nest g mi logger
 
+
+pnpm install class-validator   # 管道校验的
+ pnpm install  class-transformer
 ### 装饰器
 
 - 属性装饰器
